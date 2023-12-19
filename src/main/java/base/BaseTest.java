@@ -1,6 +1,7 @@
 package base;
 
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -43,23 +44,13 @@ public class BaseTest {
         if (browser.equalsIgnoreCase("chrome")) {
             // run headless or with ui
             if(Objects.equals(headless, "true")) {
-
-                System.setProperty("webdriver.chrome.driver", "C:\\Users\\JLuna\\Downloads\\chromedriver.exe");
-
+                WebDriverManager.chromedriver().clearDriverCache().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--headless=new");
                 driver = new ChromeDriver(options);
             } else {
-                //WebDriverManager.chromedriver().setup();
-                System.setProperty("webdriver.chrome.driver", "C:\\Users\\JLuna\\Downloads\\chromedriver.exe");
-                ChromeOptions options = new ChromeOptions();
-
-                options.addArguments("--disable-blink-features");
-                options.addArguments("--disable-blink-features=AutomationControlled");
-
-                options.addArguments("--user-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"");
-
-                driver = new ChromeDriver(options);
+                WebDriverManager.chromedriver().clearDriverCache().setup();
+                driver = new ChromeDriver();
             }
         }
     }

@@ -8,6 +8,7 @@
 
     <test thread-count="5" name="chromeTest">
         <parameter name="browser" value="chrome"></parameter>
+        <parameter name="headless" value="false"></parameter>
         <classes>
             <class name="tests.harborFreightLogin" />
         </classes>
