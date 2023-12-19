@@ -13,7 +13,7 @@ public class hfLoginPageActions {
     ElementFetch ele = new ElementFetch();
 
     public void EnterLoginCredentials() {
-        ele.getWebElement("ID", hfLoginPageElements.emailTextBox).sendKeys("testEmail");
+        ele.getWebElement("ID", hfLoginPageElements.emailTextBox).sendKeys("testEmail@gmail.com");
         ele.getWebElement("ID", hfLoginPageElements.passwordTextBox).sendKeys("testPassword");
         ele.getWebElement("XPATH", hfLoginPageElements.signInButton).click();
     }
