@@ -1,6 +1,4 @@
-Created a simple framework that focuses on the Harbor Freight login page. (User must have chromedriver.exe in downloads folder OR update filepath in BaseTest.java line 47.)
-
-note: chromedriver.exe that I used can be downloaded by pasting this url in browser and then moving .exe from the zip to the downloads folder: https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/win64/chromedriver-win64.zip
+Created a simple framework that focuses on the Harbor Freight login page.
 
 Users can kick off the test by right clicking 'testng.xml', and selecting run.
 
