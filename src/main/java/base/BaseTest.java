@@ -6,10 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
@@ -55,28 +51,6 @@ public class BaseTest {
             } else {
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
-            }
-            // firefox
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            if(Objects.equals(headless, "true")) {
-                WebDriverManager.firefoxdriver().setup();
-                FirefoxOptions options = new FirefoxOptions();
-                options.addArguments("--headless=new");
-                driver = new FirefoxDriver(options);
-            } else {
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-            }
-            // edge
-        } else if (browser.equalsIgnoreCase("edge")) {
-            if(Objects.equals(headless, "true")) {
-                WebDriverManager.edgedriver().setup();
-                EdgeOptions options = new EdgeOptions();
-                options.addArguments("--headless=new");
-                driver = new EdgeDriver(options);
-            } else {
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
             }
         }
     }
